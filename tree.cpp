@@ -98,12 +98,14 @@ void BinaryTree<Item>::add(Item obj) {
             if (obj < cursor->obj) {
                 if (cursor->left == NULL) {
                     cursor->left = new TreeNode<Item>(obj);
+                    N++;
                 }
                 cursor = cursor->left;
             }
             else if (obj > cursor->obj) {
                 if (cursor->right == NULL) {
                     cursor->right = new TreeNode<Item>(obj);
+                    N++;
                 }
                 cursor = cursor->right;
             }
