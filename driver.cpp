@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main(int argc, char** argv) {
-    BinaryTree<int> T;
+int main(int argc, char** argv) {    
+    BinaryTree<int> T = BinaryTree<int>::getExampleTree();    
+
     return 0;
 }

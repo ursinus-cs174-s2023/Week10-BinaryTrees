@@ -21,6 +21,9 @@ class BinaryTree {
         int N; // Size (number of nodes)
     public:
         BinaryTree();
+        void setRoot(TreeNode<Item>* root);
+
+        static BinaryTree<int> getExampleTree();
 };
 
 #endif
