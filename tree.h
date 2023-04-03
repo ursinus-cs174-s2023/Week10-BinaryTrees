@@ -23,6 +23,16 @@ class BinaryTree {
         BinaryTree();
         void setRoot(TreeNode<Item>* root);
 
+        /**
+         * 
+         * Looking for a particular object in the tree
+         * @param obj Object to search for
+         * 
+         * @return true if obj is in the tree
+         *         false otherwise
+        */
+        bool contains(Item obj);
+
         static BinaryTree<int> getExampleTree();
 };
 

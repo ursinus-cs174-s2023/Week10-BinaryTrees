@@ -50,6 +50,20 @@ BinaryTree<int> BinaryTree<Item>::getExampleTree() {
 }
 
 
+/**
+ * 
+ * Looking for a particular object in the tree
+ * @param obj Object to search for
+ * 
+ * @return true if obj is in the tree
+ *         false otherwise
+*/
+template <typename Item> 
+bool BinaryTree<Item>::contains(Item obj) {
+
+    return false; // This is a dummy value
+}
+
 
 template class BinaryTree<int>;
 template class TreeNode<int>;
