@@ -12,6 +12,8 @@ class TreeNode {
 
         TreeNode(Item obj);
 
+        void inorder();
+
 };
 
 template <typename Item> 
@@ -32,6 +34,17 @@ class BinaryTree {
          *         false otherwise
         */
         bool contains(Item obj);
+
+        /**
+         * Add an object to the tree if it doesn't
+         * exist already.  Make sure we maintain the
+         * "tree ordering invariant"
+         * 
+         * @param obj: Object I want to add
+        */
+        void add(Item obj);
+
+        void inorder();
 
         static BinaryTree<int> getExampleTree();
 };
