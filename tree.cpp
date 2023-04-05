@@ -20,6 +20,24 @@ BinaryTree<Item>::BinaryTree() {
 }
 
 template <typename Item> 
+void BinaryTree<Item>::cleanupSubtrees(TreeNode<Item>* node) {
+    if (node->left != NULL) {
+        cleanupSubtrees(node->left);
+    }
+    if (node->right != NULL) {
+        cleanupSubtrees(node->right);
+    }
+    delete node;
+}
+
+template <typename Item> 
+BinaryTree<Item>::~BinaryTree() {
+    if (this->root != NULL) {
+        cleanupSubtrees(this->root);
+    }
+}
+
+template <typename Item> 
 void BinaryTree<Item>::setRoot(TreeNode<Item>* root) {
     this->root = root;
 }
@@ -74,6 +92,51 @@ bool BinaryTree<Item>::contains(Item obj) {
         ret = true;
     }
     return ret; //dummy value
+}
+
+/**
+ * 
+ * Looking for a particular object in the tree
+ * @param obj Object to search for
+ * 
+ * @return true if obj is in the tree
+ *         false otherwise
+*/
+template <typename Item> 
+bool BinaryTree<Item>::containsRec(Item obj) {
+    bool res = false;
+    if (root != NULL) {
+        res = root->containsRec(obj);
+    }
+    return res;
+}
+
+
+/**
+ * 
+ * Looking for a particular object in the tree
+ * @param obj Object to search for
+ * 
+ * @return true if obj is in the tree
+ *         false otherwise
+*/
+template <typename Item> 
+bool TreeNode<Item>::containsRec(Item obj) {
+    bool res = false;
+    if (obj == this->obj) {
+        res = true;
+    }
+    else if (obj < this->obj) {
+        if (this->left != NULL) {
+            res = this->left->containsRec(obj);
+        }
+    }
+    else if (obj > this->obj) {
+        if (this->right != NULL) {
+            res = this->right->containsRec(obj);
+        }
+    }
+    return res;
 }
 
 

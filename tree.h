@@ -17,6 +17,16 @@ class TreeNode {
 
 
         /**
+         * 
+         * Looking for a particular object in the tree
+         * @param obj Object to search for
+         * 
+         * @return true if obj is in the subtree rooted at this node
+         *         false otherwise
+        */
+        bool containsRec(Item obj);
+
+        /**
          * Recursively draw this node and its child nodes
          * 
          * @param res Resolution of the canvas
@@ -32,6 +42,9 @@ class BinaryTree {
         int N; // Size (number of nodes)
     public:
         BinaryTree();
+        ~BinaryTree();
+        void cleanupSubtrees(TreeNode<Item>* node);
+
         void setRoot(TreeNode<Item>* root);
 
         /**
@@ -43,6 +56,16 @@ class BinaryTree {
          *         false otherwise
         */
         bool contains(Item obj);
+
+        /**
+         * 
+         * Looking for a particular object in the tree
+         * @param obj Object to search for
+         * 
+         * @return true if obj is in the tree
+         *         false otherwise
+        */
+        bool containsRec(Item obj);
 
         /**
          * Add an object to the tree if it doesn't
