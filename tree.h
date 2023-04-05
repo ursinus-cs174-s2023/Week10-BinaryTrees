@@ -2,6 +2,7 @@
 #define LINKED_LIST_H
 
 #include <stdio.h>
+#include "simplecanvas/simplecanvas.h"
 
 template <typename Item> 
 class TreeNode {
@@ -13,6 +14,14 @@ class TreeNode {
         TreeNode(Item obj);
 
         void inorder();
+
+
+        /**
+         * Recursively draw this node and its child nodes
+         * 
+         * @param res Resolution of the canvas
+        */
+        void draw(int res);
 
 };
 
@@ -45,6 +54,13 @@ class BinaryTree {
         void add(Item obj);
 
         void inorder();
+
+        /**
+         * Draw the tree on a square canvas of a particular resolution
+         * 
+         * @param res Resolution of the canvas
+        */
+        void draw(int res);
 
         static BinaryTree<int> getExampleTree();
 };

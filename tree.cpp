@@ -1,4 +1,5 @@
 #include "tree.h"
+#include "simplecanvas/simplecanvas.h"
 #include <iostream>
 using namespace std;
 
@@ -130,6 +131,40 @@ void BinaryTree<Item>::inorder() {
     if (root != NULL) {
         root->inorder();
     }
+}
+
+
+
+
+
+
+/////////////////////////////////////////////////////////
+//                     Tree Drawing                    //
+/////////////////////////////////////////////////////////
+
+/**
+ * Draw the tree on a square canvas of a particular resolution
+ * 
+ * @param res Resolution of the canvas
+*/
+template <typename Item> 
+void BinaryTree<Item>::draw(int res) {
+    SimpleCanvas canvas(res, res);
+    canvas.clearRect(255, 255, 255);
+    canvas.drawString("A Tree!", 10, 10, "simplecanvas/");
+    root->draw(res);
+    canvas.write("tree.png");
+}
+
+/**
+ * Recursively draw this node and its child nodes
+ * 
+ * @param res Resolution of the canvas
+*/
+void draw(int res);
+template <typename Item> 
+void TreeNode<Item>::draw(int res) {
+    // TODO: Fill this in
 }
 
 template class BinaryTree<int>;
