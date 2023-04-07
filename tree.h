@@ -30,8 +30,10 @@ class TreeNode {
          * Recursively draw this node and its child nodes
          * 
          * @param res Resolution of the canvas
+         * @param canvas Pointer to canvas to which to draw this node
+         * and every node below it
         */
-        void draw(int res);
+        void draw(int res, SimpleCanvas* canvas);
 
 };
 

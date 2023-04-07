@@ -215,18 +215,22 @@ void BinaryTree<Item>::draw(int res) {
     SimpleCanvas canvas(res, res);
     canvas.clearRect(255, 255, 255);
     canvas.drawString("A Tree!", 10, 10, "simplecanvas/");
-    root->draw(res);
+    if (root != NULL) {
+        root->draw(res, &canvas);
+    }
     canvas.write("tree.png");
 }
+
 
 /**
  * Recursively draw this node and its child nodes
  * 
  * @param res Resolution of the canvas
+ * @param canvas Pointer to canvas to which to draw this node
+ * and every node below it
 */
-void draw(int res);
-template <typename Item> 
-void TreeNode<Item>::draw(int res) {
+template <typename Item>
+void TreeNode<Item>::draw(int res, SimpleCanvas* canvas) {
     // TODO: Fill this in
 }
 
